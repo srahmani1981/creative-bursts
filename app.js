@@ -9,6 +9,12 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Lacey Rahmani Photography' });
 });
 
+
+app.get('/portfolio', (req, res) => {
+  res.render('portfolio', { title: 'Portfolio - Lacey Rahmani Photography' });
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
