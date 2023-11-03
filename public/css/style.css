@@ -39,3 +39,88 @@ footer {
   width: 100%;
 }
 
+/* ... Existing CSS ... */
+
+nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ... */
+/* ... Existing CSS ... */
+
+/* Carousel container */
+.carousel {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Carousel content */
+.carousel-content {
+  display: flex;
+  width: calc(100% * 3); /* Adjust based on the number of images */
+  transition: transform 0.5s ease;
+}
+
+/* Carousel item */
+.carousel-item {
+  width: 100%;
+  flex: 0 0 auto;
+  transition: opacity 1s ease;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  display: block;
+}
+
+/* Carousel navigation */
+.carousel-nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background-color: #717171;
+}
+
+/* Make sure to add responsiveness */
+@media (max-width: 768px) {
+  .carousel-content {
+    width: calc(100% * 3); /* Adjust based on the number of images */
+  }
+}
+
+/* ... */
+

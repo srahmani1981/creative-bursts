@@ -8,15 +8,73 @@
 </head>
 <body>
 
-  <header>
-    <h1>Lacey Rahmani Photography</h1>
-  </header>
+  <!-- ... Other parts of index.ejs ... -->
 
-  <section id="gallery">
-    <!-- Add your images here -->
-    <img src="path_to_image" alt="Image description">
-    <!-- Repeat for each image -->
-  </section>
+<header>
+  <h1>Lacey Rahmani Photography</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+	<li><a href ="/contact">Contact<a></li>
+      <!-- Additional navigation items can be added here -->
+    </ul>
+  </nav>
+</header>
+
+<!-- ... -->
+
+
+  <!-- ... Other parts of index.ejs ... -->
+
+<section class="carousel">
+  <div class="carousel-content">
+    <div class="carousel-item">
+      <img src="/path_to_your_image_1.jpg" alt="Image 1">
+    </div>
+    <div class="carousel-item">
+      <img src="/path_to_your_image_2.jpg" alt="Image 2">
+    </div>
+    <div class="carousel-item">
+      <img src="/path_to_your_image_3.jpg" alt="Image 3">
+    </div>
+    <!-- Add more items as needed -->
+  </div>
+  <div class="carousel-nav">
+    <!-- Dots for navigation -->
+    <span class="carousel-dot" onclick="currentSlide(1)"></span>
+    <span class="carousel-dot" onclick="currentSlide(2)"></span>
+    <span class="carousel-dot" onclick="currentSlide(3)"></span>
+    <!-- Add more dots as needed -->
+  </div>
+</section>
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("carousel-item");
+    let dots = document.getElementsByClassName("carousel-dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+</script>
+
+<!-- ... -->
 
   <footer>
     <p>&copy; <%= new Date().getFullYear() %> Lacey Rahmani Photography</p>
