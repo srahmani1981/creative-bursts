@@ -6,7 +6,7 @@ body {
 }
 
 header {
-  background: #333;
+  background:#0065A4;
   color: #fff;
   padding: 1rem 0;
   text-align: center;
@@ -30,7 +30,7 @@ header h1 {
 }
 
 footer {
-  background: #333;
+  background: #0065A4;
   color: #fff;
   text-align: center;
   padding: 1rem 0;
