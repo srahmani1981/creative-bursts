@@ -24,14 +24,16 @@
 </header>
 
 <!-- ... -->
-
+<div id="spinner" class="loader-container">
+  <div class="loader"></div>
+</div>
 
   <!-- ... Other parts of index.ejs ... -->
 
 <section class="carousel">
   <div class="carousel-content">
     <div class="carousel-item">
-      <img src="/users/srahmani/lacey-rahmani-photography/public/images/haystack_night.jpeg" alt="Image 1">
+      <img src="/lacey-rahmani-photography/images/haystack_night.jpeg" alt="Image 1">
     </div>
     <div class="carousel-item">
       <img src="/path_to_your_image_2.jpg" alt="Image 2">
@@ -74,6 +76,29 @@
     setTimeout(showSlides, 15000); // Change image every 15 seconds
   }
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const spinner = document.getElementById('spinner');
+    
+    // Hide spinner on page load
+    window.addEventListener('load', function() {
+      spinner.style.display = 'none';
+    });
+
+    // Show spinner on link click
+    document.querySelectorAll('a').forEach(item => {
+      item.addEventListener('click', function(e) {
+        spinner.style.display = 'flex';
+  // Delay navigation and hide spinner
+  setTimeout(() => {
+          window.location.href = href; // Redirect after the delay
+        }, 100000); // Delay duration in milliseconds (e.g., 2000ms = 2 seconds)
+
+      });
+    });
+  });
+</script>
+
 
 <!-- ... -->
 

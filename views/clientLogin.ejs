@@ -7,7 +7,9 @@
   <title><%= title %></title>
 </head>
 <body>
-
+  <div id="spinner" class="loader-container">
+    <div class="loader"></div>
+  </div>
   <header>
     <h1>Lacey Rahmani Photography</h1>
     <nav>
@@ -23,7 +25,28 @@
   <section id="gallery">
     <!-- Portfolio images will go here -->
   </section>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const spinner = document.getElementById('spinner');
+      
+      // Hide spinner on page load
+      window.addEventListener('load', function() {
+        spinner.style.display = 'none';
+      });
+  
+      // Show spinner on link click
+      document.querySelectorAll('a').forEach(item => {
+        item.addEventListener('click', function(e) {
+          spinner.style.display = 'flex';
+    // Delay navigation and hide spinner
+    setTimeout(() => {
+            window.location.href = href; // Redirect after the delay
+          }, 100000); // Delay duration in milliseconds (e.g., 2000ms = 2 seconds)
+  
+        });
+      });
+    });
+  </script>
   <footer>
     <p>&copy; <%= new Date().getFullYear() %> Lacey Rahmani Photography</p>
   </footer>
