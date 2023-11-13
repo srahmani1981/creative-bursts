@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add required meta tags, title, and link to your CSS here -->
+    <title>Dashboard - Lacey Rahmani Photography</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Lacey Rahmani Photography</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/clientLogin">Client Login</a></li>
+                <li><a href="/" id="logoutButton">Logout</a></li>
+                <!-- Add more navigation items if needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <h2>Client Dashboard</h2>
+        <p>Welcome to your dashboard!</p>
+        <!-- Add more dashboard contents here -->
+    </div>
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function(e) {
+            // Here you can add any actions you want to perform on logout
+            // For example, clearing localStorage or showing a message
+            // localStorage.clear(); // Example: Clearing localStorage
+            alert('You have been logged out.'); // Example: Showing a message
+        });
+    </script>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Lacey Rahmani Photography</p>
+    </footer>
+</body>
+</html>
+

@@ -22,6 +22,14 @@ app.get('/clientLogin', (req, res) => {
   res.render('clientLogin', { title: 'Client Login - Lacey Rahmani Photography' });
 });
 
+//app.get('/fakeDashboard', (req, res) => {
+//  res.send('<h1>Welcome to the Fake Dashboard</h1>'); // Replace with rendering an actual EJS page if needed
+//});
+
+app.get('/fakeDashboard', (req, res) => {
+  res.render('fakeDashboard', { title: 'Dashboard - Lacey Rahmani Photography' });
+});
+
 
 
 app.listen(port, () => {
