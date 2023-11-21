@@ -75,6 +75,8 @@ nav a:hover {
   overflow: hidden;
 }
 
+
+
 /* Carousel content */
 .carousel-content {
   display: flex;
@@ -82,18 +84,25 @@ nav a:hover {
   transition: transform 0.5s ease;
 }
 
+
 /* Carousel item */
 .carousel-item {
-  width: 100%;
-  flex: 0 0 auto;
-  transition: opacity 1s ease;
   position: relative;
+  width: 35%;
+  height: 800px;
+}
+.carousel-item img {
+  width: 100%;         /* Full width of the container */
+  height: 100%;        /* Full height of the container */
+  object-fit: cover;   /* Cover the area, may crop the image */
+  position: absolute;  /* Positioned absolutely within .carousel-item */
+  top: 50%;            /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centering technique */
 }
 
-.carousel-item img {
-  width: 100%;
-  display: block;
-}
+
+
 
 /* Carousel navigation */
 .carousel-nav {
@@ -225,6 +234,8 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* ... existing styles ... */
-
-/* ... existing styles ... */
+.chart-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}

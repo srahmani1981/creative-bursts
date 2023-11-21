@@ -21,45 +21,76 @@
 
     <div class="payment-container">
         <h2>Payment Page</h2>
-        <form id="paymentForm">
+
+        <div class="payment-type-selection">
+            <input type="radio" id="creditCard" name="paymentType" value="creditCard" checked>
+            <label for="creditCard">Credit Card</label>
+            <input type="radio" id="ach" name="paymentType" value="ach">
+            <label for="ach">ACH</label>
+        </div>
+
+        <div id="creditCardForm" style="display: block;">
             <h3>Credit Card Payment</h3>
-            <div class="form-group">
-                <label for="cc-name">Name on Card:</label>
-                <input type="text" id="cc-name" name="cc-name" required>
-            </div>
-            <div class="form-group">
-                <label for="cc-number">Card Number:</label>
-                <input type="text" id="cc-number" name="cc-number" required>
-            </div>
-            <!-- Add additional fields for expiry, CVV, etc. -->
+            <form id="ccForm">
+                <div class="form-group">
+                    <label for="cc-name">Name on Card:</label>
+                    <input type="text" id="cc-name" name="cc-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="cc-number">Card Number:</label>
+                    <input type="text" id="cc-number" name="cc-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="cc-expiry">Expiration Date:</label>
+                    <input type="text" id="cc-expiry" name="cc-expiry" required placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                    <label for="cc-cvv">CVV:</label>
+                    <input type="text" id="cc-cvv" name="cc-cvv" required>
+                </div>
+                <button type="button" onclick="submitForm('creditCard')">Submit Credit Card Payment</button>
+            </form>
+        </div>
 
+        <div id="achForm" style="display: none;">
             <h3>ACH Payment</h3>
-            <div class="form-group">
-                <label for="bank-name">Bank Name:</label>
-                <input type="text" id="bank-name" name="bank-name" required>
-            </div>
-            <div class="form-group">
-                <label for="account-number">Account Number:</label>
-                <input type="text" id="account-number" name="account-number" required>
-            </div>
-            <!-- Add additional fields for routing number, etc. -->
-
-            <button type="submit">Submit Payment</button>
-        </form>
+            <form id="achForm">
+                <div class="form-group">
+                    <label for="ach-bank-name">Bank Name:</label>
+                    <input type="text" id="ach-bank-name" name="ach-bank-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="ach-account-number">Account Number:</label>
+                    <input type="text" id="ach-account-number" name="ach-account-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="ach-routing-number">Routing Number:</label>
+                    <input type="text" id="ach-routing-number" name="ach-routing-number" required>
+                </div>
+                <button type="button" onclick="submitForm('ach')">Submit ACH Payment</button>
+            </form>
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; <%= new Date().getFullYear() %> Lacey Rahmani Photography</p>
-    </footer>
-
     <script>
-        document.getElementById('paymentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('This is a fake payment submission.');
-            // Here you can add code to handle form submission for demonstration.
-            // For a real payment form, you'll need secure processing (not covered here).
+        document.querySelectorAll('input[name="paymentType"]').forEach(input => {
+            input.addEventListener('change', function() {
+                document.getElementById('creditCardForm').style.display = this.value === 'creditCard' ? 'block' : 'none';
+                document.getElementById('achForm').style.display = this.value === 'ach' ? 'block' : 'none';
+            });
         });
+
+        function submitForm(paymentType) {
+            // Placeholder for form submission logic
+            alert(`Fake ${paymentType} payment submitted.`);
+            // Here, you'd typically gather form data and send it to your server
+        }
     </script>
+      <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Lacey Rahmani Photography</p>
+      </footer>
+    
+
 </body>
 </html>
 

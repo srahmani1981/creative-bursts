@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Add required meta tags, title, and link to your CSS here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Lacey Rahmani Photography</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -12,32 +14,66 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/clientLogin">Client Login</a></li>
+                <li><a href="/fakePayment">Payment Page</a></li>
                 <li><a href="/" id="logoutButton">Logout</a></li>
-                <!-- Add more navigation items if needed -->
             </ul>
         </nav>
     </header>
 
     <div class="dashboard-container">
         <h2>Client Dashboard</h2>
-        <p>Welcome to your dashboard!</p
-	<p>Proceed to <a href="/fakePayment">Payment Page</a>.</p>
+        <p>Welcome to your dashboard!</p>
 
-        <!-- Add more dashboard contents here -->
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw;">
+            <canvas id="myPieChart"></canvas>
+        </div>
     </div>
-    <script>
-        document.getElementById('logoutButton').addEventListener('click', function(e) {
-            // Here you can add any actions you want to perform on logout
-            // For example, clearing localStorage or showing a message
-            // localStorage.clear(); // Example: Clearing localStorage
-            alert('You have been logged out.'); // Example: Showing a message
-        });
-    </script>
 
     <footer>
         <p>&copy; <%= new Date().getFullYear() %> Lacey Rahmani Photography</p>
     </footer>
+
+    <script>
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+        const myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Example Dataset',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+
+        document.getElementById('logoutButton').addEventListener('click', function(e) {
+            alert('You have been logged out.');
+        });
+    </script>
+      <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Lacey Rahmani Photography</p>
+      </footer>
+    
 </body>
 </html>
-
