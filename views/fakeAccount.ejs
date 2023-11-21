@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Lacey Rahmani Photography</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Lacey Rahmani Photography</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/fakeDashboard">Dashboard</a></li>
+                <li><a href="/fakeAccount">User Account</a></li>
+                <li><a href="/" id="logoutButton">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="account-container">
+        <h2>Client Account</h2>
+        <p>Welcome, <%= username %>!</p>
+        <!-- Add more account details and options here -->
+    </div>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Lacey Rahmani Photography</p>
+    </footer>
+</body>
+</html>
+
